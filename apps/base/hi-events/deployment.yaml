@@ -32,3 +32,5 @@ spec:
                 secretKeyRef:
                   name: hi-events-secrets
                   key: JWT_SECRET
+            - name: DATABASE_URL
+              value: postgres.default.svc.cluster.local
