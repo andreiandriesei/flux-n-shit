@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Secret
 metadata:
   name: hi-events-secrets
+  namespace: default
 type: Opaque
 stringData:
   APP_KEY: base64:3Dk+bq59pjSWyH9FsouoU3piK5LbYXlBg5IdJ6VRLfo=
