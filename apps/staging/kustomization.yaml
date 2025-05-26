@@ -4,6 +4,7 @@ namespace: default
 resources:
   - ../base/podinfo
   - ../base/hi-events
+  - ../base/postgres
 # ---
 # apiVersion: kustomize.toolkit.fluxcd.io/v1
 # kind: Kustomization
