@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hi-events
+  labels:
+    app: hi-events
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hi-events
+  template:
+    metadata:
+      labels:
+        app: hi-events
+    spec:
+      containers:
+        - name: hi-events
+          image: axalem/hi-events:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+          env:
+            - name: APP_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: hi-events-secrets
+                  key: APP_KEY
+            - name: JWT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: hi-events-secrets
+                  key: JWT_SECRET
